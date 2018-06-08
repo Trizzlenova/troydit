@@ -1,0 +1,31 @@
+<!-- {% load staticfiles %}
+
+<html>
+    <head>
+        <title>Troydit</title>
+        <link rel="stylesheet" href="{% static 'css/tunr.css' %}">
+
+    </head>
+    <body>
+        <h1>Tun.r</h1>
+        <nav>
+            <a href="/">Posts</a>
+            <a href="/">Artists</a>
+            <div class="user-info">
+                {% if user.is_authenticated %}
+                    Welcome, {{ user.username }}
+                    <a href="{% url 'logout' %}">Signout</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'signup' %}">Signup</a>
+                {% endif %}
+            </div>
+        </nav>
+        <hr />
+        {% block content %}
+        {% endblock %}
+    </body>
+    <hr />
+    <footer>I am a footer, all rights reserved</footer>
+</html>
+ -->
