@@ -14,12 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf.urls import include, url
-from tunr import views as core_views
+from troydit import views as core_views
 from django.urls import path
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
+# PROJECT URLS
 urlpatterns = [
     url(r'', include('troydit.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^signup/$', core_views.signup, name='signup'),
+    url(r'^accounts/login/$', auth_views.login, name='login'),
+    url(r'^accounts/logout/$', auth_views.logout, name='logout'),
 ]

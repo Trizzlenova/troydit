@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django_extensions',
 ]
 
-LOGIN_REDIRECT_URL = 'artist_list'
+LOGIN_REDIRECT_URL = 'post_list'
 LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
