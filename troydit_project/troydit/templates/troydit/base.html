@@ -14,6 +14,7 @@
                 {% if user.is_authenticated %}
                     Welcome, {{ user.username }}
                     <a href="{% url 'logout' %}">Signout</a>
+                    <a href="{% 'user_detail' pk=user.pk% }">My Account</a>
                 {% else %}
                     <a href="{% url 'login' %}">Login</a>
                     <a href="{% url 'signup' %}">Signup</a>

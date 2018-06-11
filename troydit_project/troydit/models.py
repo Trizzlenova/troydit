@@ -13,7 +13,7 @@ class User(models.Model):
         return self.username.username
 
 class Post(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
+    author = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='posts')
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=40)
     date = models.DateTimeField(default=datetime.now())
