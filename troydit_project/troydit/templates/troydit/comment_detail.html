@@ -1,0 +1,14 @@
+{% extends 'troydit/base.html' %}
+
+{% block content %}
+<h2>Comment {{ comment.date }}
+  <a href="{% url 'comment_edit' pk=comment.pk %}">(edit)</a>
+  <a href="{% url 'comment_delete' pk=comment.pk %}"> (delete) </a>
+</h2>
+<h4>Album title: {{ comment.text }}</h4>
+
+<!-- <a href="{{ song.preview_url }}" alt="" class="song-preview"> -->
+  <!-- Listen to a preview of {{post.title}}! -->
+</a>
+
+{% endblock %}
