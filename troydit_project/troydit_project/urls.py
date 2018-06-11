@@ -14,17 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf.urls import include, url
-from troydit import views as core_views
 from django.urls import path, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.views.generic.base import TemplateView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from troydit import views as core_views
 
 
 # PROJECT URLS
 urlpatterns = [
-    url(r'', include('troydit.urls')),
+    url(r'', TemplateView.as_view(template_name='post_list.html'), name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^signup/$', core_views.signup, name='signup'),
     url(r'^accounts/login/$', auth_views.login, name='login'),
