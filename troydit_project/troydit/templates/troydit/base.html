@@ -7,21 +7,19 @@
 
     </head>
     <body>
-        <h1>Troydit</h1>
+        <h1 id='title'>Troydit</h1>
         <nav>
-            <a href="/">Posts</a>
-            <div class="user-info">
-                {% if user.is_authenticated %}
-                    Welcome, {{ user.username }}
-                    <a href="{% url 'logout' %}">Signout</a>
-                    <a href="{% 'user_detail' pk=user.pk% }">My Account</a>
-                {% else %}
-                    <a href="{% url 'login' %}">Login</a>
-                    <a href="{% url 'signup' %}">Signup</a>
-                {% endif %}
-            </div>
+            <a href="/">Home </a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Signout</a>
+                <a href="{% 'user_detail' pk=user.pk% }">My Account</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'signup' %}">Signup</a>
+            {% endif %}
         </nav>
         <hr />
+        Welcome, {{ user.username }}
         {% block content %}
         {% endblock %}
     </body>
