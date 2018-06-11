@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>Troydit</title>
+        <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/troydit.css' %}">
 
     </head>
@@ -12,7 +13,7 @@
             <a href="/">Home </a>
             {% if user.is_authenticated %}
                 <a href="{% url 'logout' %}">Signout</a>
-                <a href="{% 'user_detail' pk=user.pk% }">My Account</a>
+                <a href="{% 'user_detail' pk=user.pk % }">My Account</a>
             {% else %}
                 <a href="{% url 'login' %}">Login</a>
                 <a href="{% url 'signup' %}">Signup</a>

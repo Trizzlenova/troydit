@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from troydit import views as core_views
-from django.urls import path
+from django.urls import path, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.views.generic.base import TemplateView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 # PROJECT URLS
 urlpatterns = [

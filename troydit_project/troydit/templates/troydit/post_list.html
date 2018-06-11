@@ -8,6 +8,7 @@ reversed
 {% block content %}
 
 <h2>Posts <a href="{%url 'post_create' %}">(+)</a></h2>
+<div>
 <ul>
     {% for post in posts %}
         <li>
@@ -15,7 +16,20 @@ reversed
               {{ post.title }}
             </a>
         </li>
+        <li class='post'>
+          <a href=""><img src="{{ post.image_url }}" alt="" class="post-photo"></a>
+          <a href="{% url 'post_detail' pk=post.pk %}">
+            {{post.description}}
+          </a>
+        </li>
+            {% for comment in post.comments.all %}
+        <li>
+            <a href="{% url 'comment_detail' pk=comment.pk %}">{{ comment.text }}</a>
+
+        </li>
+    {% endfor %}
     {% endfor %}
 </ul>
+</div>
 
 {% endblock %}
